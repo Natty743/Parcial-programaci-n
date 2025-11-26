@@ -1,104 +1,111 @@
-
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Proyecto Web – Frontend & Backend</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles2.css?v=2" />
 </head>
 
 <body>
-  <header class="hero">
-    <h1>Parcial corte 3</h1>
-    <p>Explicación interactiva de conceptos esenciales usando diseño =)</p>
+
+  <!-- MENÚ SUPERIOR -->
+  <header class="topbar">
+    <div class="topbar-content">
+      <h2 class="topbar-logo">Parcial C3</h2>
+
+      <nav class="topbar-nav">
+        <a href="#npm">NPM + Node</a>
+        <a href="#servidores">Servidores</a>
+        <a href="#apis">APIs</a>
+        <a href="#html-rest-js">REST</a>
+        <a href="#js">JavaScript</a>
+        <a href="#demo">Demo</a>
+      </nav>
+    </div>
   </header>
-  <main class="container">
 
-    <!-- NPM / Node -->
-    <section class="card">
-      <h2>📦 ¿Qué es NPM con Node.js?</h2>
-      <p><strong>Node.js</strong> permite ejecutar JavaScript fuera del navegador.  
-      <strong>NPM</strong> gestiona dependencias y librerías para proyectos de JavaScript.</p>
 
-      <h3>⚙️ Configuración del entorno</h3>
-      <p>Instala Node.js, luego crea un proyecto con:</p>
-      <pre><code>npm init -y</code></pre>
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="content">
 
-      <h3>🌐 Crear servidor web con Node.js</h3>
-      <pre><code>const express = require('express');
+    <header class="hero">
+      <h1>Parcial Corte 3</h1>
+      <p>Explicación interactiva de conceptos esenciales usando diseño =)</p>
+    </header>
+
+    <main class="container">
+
+      <!-- NPM -->
+      <section id="npm" class="card">
+        <h2>📦 ¿Qué es NPM con Node.js?</h2>
+        <p><strong>Node.js</strong> ejecuta JavaScript fuera del navegador.  
+        <strong>NPM</strong> administra dependencias y librerías.</p>
+
+        <h3>⚙️ Configurar un proyecto</h3>
+        <pre><code>npm init -y</code></pre>
+
+        <h3>🌐 Crear servidor con Node.js</h3>
+        <pre><code>const express = require('express');
 const app = express();
 app.listen(3000);</code></pre>
+      </section>
 
-      <h3>🔗 Conexión Frontend ↔ Backend</h3>
-      <p>El frontend usa <strong>fetch</strong> para comunicarse con el backend.</p>
-    </section>
+      <!-- Servidores -->
+      <section id="servidores" class="card">
+        <h2>🖥️ ¿Qué son los servidores web?</h2>
+        <p>Procesan, almacenan y entregan archivos a través del protocolo HTTP.</p>
 
-    <!-- Servidores Web -->
-    <section class="card">
-      <h2>🖥️ ¿Qué son los servidores web?</h2>
-      <p>Es un sistema, ya sea hardware (computadora física) o software (programa), que almacena y procesa archivos de sitios web para entregarlos a los navegadores 
-        de los usuarios a través de Internet mediante el protocolo HTTP.</p>
-      <h3>Configuración básica</h3>
-      <pre><code>app.get('/api', (req, res) => res.json({ msg: "Hola!" }));</code></pre>
+        <h3>Ejemplo de ruta:</h3>
+        <pre><code>app.get('/api', (req, res) => {
+  res.json({ msg: "Hola!" });
+});</code></pre>
+      </section>
 
-      <h3>Rutas, peticiones y respuestas</h3>
-      <p>GET, POST, PUT, DELETE son los métodos más usados en APIs.</p>
-    </section>
+      <!-- APIs -->
+      <section id="apis" class="card">
+        <h2>🌐 ¿Para qué consumir APIs?</h2>
+        <p>Permiten usar funciones ya hechas sin programarlas desde cero.</p>
 
-    <!-- APIs -->
-    <section class="card">
-      <h2>🌐 ¿Para qué consumir APIs?</h2>
-      <p>Las API se utilizan para integrar nuevas aplicaciones con los sistemas de software existentes. Esto aumenta la velocidad de desarrollo, ya que no hay que escribir cada funcionalidad desde cero. 
-        Puede utilizar las API para aprovechar el código existente.</p>
-      <h3>Fetch API</h3>
-      <pre><code>fetch('/api/message')
+        <h3>Fetch API</h3>
+        <pre><code>fetch('/api/message')
   .then(r => r.json())
   .then(d => console.log(d));</code></pre>
+      </section>
 
-      <h3>📄 JSON</h3>
-      <p>Formato para enviar datos entre cliente y servidor.</p>
-    </section>
+      <!-- HTML REST JS -->
+      <section id="html-rest-js" class="card">
+        <h2>📘 HTML, API REST y JavaScript</h2>
+        <p>HTML estructura, REST comunica sistemas y JavaScript les da comportamiento.</p>
+      </section>
 
-    <!-- HTML / REST / JS -->
-    <section class="card">
-      <h2>📘 HTML, API REST y JavaScript</h2>
-      <p>HTML estructura, REST define comunicación y JavaScript da comportamiento.</p>
-    </section>
+      <!-- JavaScript -->
+      <section id="js" class="card">
+        <h2>⚡ Programación en JavaScript</h2>
 
-    <!-- JS Avanzado -->
-    <section class="card">
-      <h2>⚡ Programación en JavaScript</h2>
-
-      <h3>Objetos dentro de objetos</h3>
-      <pre><code>const persona = {
+        <h3>Objetos dentro de objetos</h3>
+        <pre><code>const persona = {
   nombre: "Naty",
   direccion: { ciudad: "Bucaramanga" }
 };</code></pre>
 
-      <h3>Destructuring</h3>
-      <pre><code>const { nombre } = persona;</code></pre>
+        <h3>Destructuring</h3>
+        <pre><code>const { nombre } = persona;</code></pre>
+      </section>
 
-      <h3>var, let y const</h3>
-      <p>
-        <strong>var</strong> → global o función  
-        <strong>let</strong> → bloque  
-        <strong>const</strong> → no se puede reasignar  
-      </p>
-    </section>
+      <!-- Demo -->
+      <section id="demo" class="card demo">
+        <h2>🚀 Demo: Conexión con el Backend</h2>
+        <button id="btnFetch">Holis</button>
+        <pre id="output"></pre>
+      </section>
 
-    <!-- Demo -->
-    <section class="card demo">
-      <h2>🚀 Demo: Conexión con el Backend</h2>
-      <button id="btnFetch">Holis</button>
-      <pre id="output"></pre>
-    </section>
+    </main>
 
-  </main>
-
-  <footer>
-    <p>Chauux</p>
-  </footer>
+    <footer>
+      <p>Chauux</p>
+    </footer>
+  </div>
 
 <script src="script.js"></script>
 </body>

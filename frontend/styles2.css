@@ -1,0 +1,95 @@
+
+/* Paleta */
+:root {
+  --morado: #6d28d9;
+  --morado-oscuro: #4c1d95;
+  --morado-claro: #ede9fe;
+  --gris: #f3f4f6;
+  --texto: #1f1f1f;
+  --blanco: #ffffff;
+  --sombra: 0 8px 20px rgba(0,0,0,0.12);
+  --radio: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--gris);
+  color: var(--texto);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--morado), var(--morado-oscuro));
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.3rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: var(--blanco);
+  padding: 22px;
+  border-radius: var(--radio);
+  margin-bottom: 20px;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+h2 {
+  color: var(--morado-oscuro);
+}
+
+pre {
+  background: var(--morado-claro);
+  color: var(--morado-oscuro);
+  padding: 12px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+button {
+  background: var(--morado);
+  padding: 12px 18px;
+  border: none;
+  border-radius: var(--radio);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: var(--sombra);
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--morado-oscuro);
+}
+
+#output {
+  background: var(--gris);
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 50px;
+  white-space: pre-wrap;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--morado-oscuro);
+  font-weight: 600;
+}
